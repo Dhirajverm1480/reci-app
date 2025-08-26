@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="w-full h-[80vh] md:h-[calc(100vh-60px)] rounded-lg shadow-lg mb-2 flex flex-col justify-center pl-[5%] bg-no-repeat bg-cover bg-right"
+      className="w-full h-[80vh] md:h-[calc(100vh-60px)] shadow-lg mb-2 flex flex-col justify-center pl-[5%] bg-no-repeat bg-cover bg-right"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${Image4})`,
       }}

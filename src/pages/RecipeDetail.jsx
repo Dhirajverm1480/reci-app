@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RecipesContext } from "../contextApi/RecipesContext";
-import SuggestionItem from "../components/SuggestionItem";
 import Title from "../components/Title";
 import Recipes from "../components/Recipes";
 
@@ -19,10 +18,12 @@ const RecipeDetail = () => {
     }
   };
 
-  const mealItem = recipeData.mealType
+  const mealItem = recipeData.mealType;
 
   const filterItems = (mealItem) => {
-    const filterItem = recipes.filter((item) => item.mealType.includes(`${mealItem}`));
+    const filterItem = recipes.filter((item) =>
+      item.mealType.includes(`${mealItem}`)
+    );
     setFilterRecipe(filterItem);
     // console.log("MealFil:",filterItem)
   };
@@ -33,10 +34,10 @@ const RecipeDetail = () => {
   }, [recipes, recipeId]);
 
   useEffect(() => {
-    if(recipeData ){
-      filterItems(recipeData.mealType)
+    if (recipeData) {
+      filterItems(recipeData.mealType);
     }
-  },[recipeData])
+  }, [recipeData]);
 
   // console.log("Meal: ",mealItem)
 
@@ -118,7 +119,9 @@ const RecipeDetail = () => {
         })}
       </div>
       <div>
-        <Title title={"Suggestion"} />
+        {
+          filterRecipe.mealType? (<Title title={"Suggestion"} />):''
+        }
         <div className="page-frame flex flex-wrap gap-3 justify-start">
           {filterRecipe.map((item) => (
             <div key={item.id} className="w-full md:w-[45%] lg:w-[30%]">
