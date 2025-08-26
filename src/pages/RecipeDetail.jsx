@@ -9,7 +9,7 @@ const RecipeDetail = () => {
   const { recipeId } = useParams();
   const { recipes } = useContext(RecipesContext);
   const [recipeData, setRecipeData] = useState(false);
-  const [filterRecipe, setFilterRecipe] = useState();
+  const [filterRecipe, setFilterRecipe] = useState([]);
 
   const fetchRecipeDetail = async () => {
     const item = recipes.find((item) => item.id === parseInt(recipeId));
@@ -22,9 +22,9 @@ const RecipeDetail = () => {
   const mealItem = recipeData.mealType
 
   const filterItems = (mealItem) => {
-    const filterItem = recipes.filter((item) => item.mealType.includes(mealItem));
+    const filterItem = recipes.filter((item) => item.mealType.includes(`${mealItem}`));
     setFilterRecipe(filterItem);
-    // console.log(item)
+    // console.log("MealFil:",filterItem)
   };
 
   useEffect(() => {
@@ -33,8 +33,12 @@ const RecipeDetail = () => {
   }, [recipes, recipeId]);
 
   useEffect(() => {
-    filterItems(recipeData.mealType)
+    if(recipeData ){
+      filterItems(recipeData.mealType)
+    }
   },[recipeData])
+
+  // console.log("Meal: ",mealItem)
 
   // console.log(filterRecipe);
 
