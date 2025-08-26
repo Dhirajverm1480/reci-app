@@ -12,30 +12,18 @@ const RecipeDetail = () => {
   const [filterRecipe, setFilterRecipe] = useState();
 
   const fetchRecipeDetail = async () => {
-    const item = recipes.find((item) => item.id === parseInt(recipeId));
-    if (item) {
-      setRecipeData(item);
-      // console.log(item)
-    }
-  };
-
-  const itemMeal = recipeData.mealType
-  const filterItems = (itemMeal) => {
-    const item = recipes.filter((item) => item.mealType.includes(`${itemMeal}`));
-    setFilterRecipe(item);
-    // console.log(item)
-  };
+    recipes.map((item) => {
+      if (item.id == recipeId) {
+        setRecipeData(item);
+        console.log("item: ", item)
+        return null;
+      }
+    })
+  }
 
   useEffect(() => {
-    fetchRecipeDetail();
-    // filterItems();
-  }, [recipes, recipeId]);
-
-  useEffect(() => {
-    filterItems(recipeData.mealType)
-  }, [recipeData])
-
-  console.log(recipeData);
+    fetchRecipeDetail()
+  }, [])
 
   return recipeData ? (
     <div className="page-frame">
@@ -101,31 +89,15 @@ const RecipeDetail = () => {
         ))}
       </div>
       <hr />
-      <div className="py-2">
-        <h2 className="text-2xl text-gray-400 mb-3">Instruction</h2>
-        {recipeData.instructions.map((inst, index) => {
-          return (
-            <p className="border-b-2 border-gray-500 mb-2 text-lg" key={index}>
-              {" "}
-              <span className="bg-orange-400">Step {index + 1}</span> {inst}
-            </p>
-          );
-        })}
-      </div>
-      <div>
-        <Title title={"Suggestion"} />
-        <div className="page-frame flex flex-wrap gap-3 justify-start">
-          {filterRecipe.map((item) => (
-            <div key={item.id} className="w-full md:w-[45%] lg:w-[32%]">
-              <Recipes
-                id={item.id}
-                image={item.image}
-                name={item.name}
-                rating={item.rating}
-              />
-            </div>
-          ))}
-        </div>
+      <div className='px-2 mb-3'>
+        <h2 className='text-2xl pl-3 mb-3'>Instruction</h2>
+        {
+          recipeData.instructions.map((inst, index) => {
+            return(
+              <p className='border-b-2 border-fuchsia-500 mb-2 text-lg' key={index}> <span className='bg-orange-400'>Step {index + 1}</span> {inst}</p>
+            )
+          })
+        }
       </div>
     </div>
   ) : (
