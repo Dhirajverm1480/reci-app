@@ -11,14 +11,15 @@ const Hero = () => {
     >
       <h1 className="text-[7vw] sm:text-[8vh] mb-4 cursor-pointer">
         Welcom to the{" "}
-        <span className="text-[7wv] sm:text-xl lg:text-[8vh] text-orange-500 border-b-2 border-orange-500 hover:bg-orange-500 hover:text-white hover:rounded-lg hover:p-1">
+        <span className="text-[7wv] sm:text-[7vw] lg:text-[8vh] text-orange-500 border-b-2 border-orange-500 hover:bg-orange-500 hover:text-white hover:rounded-lg hover:p-1">
           RecipeClub.
         </span>
       </h1>
       <p className="text-sm sm:text-xl">
         The place have the multiple recipes.{" "}
       </p>
-      <div className="w-52">
+      <div className="w-80 sm:w-96 flex gap-2">
+        <a href="/about" className="btn border btn-hover">About</a>
         <a href="/contact" className="btn bg-orange-400">contact</a>
       </div>
     </section>

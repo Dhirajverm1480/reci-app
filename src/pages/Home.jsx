@@ -14,6 +14,7 @@ const Home = () => {
   return (
     <div className="">
       <Hero />
+      
       <div className="page-frame flex flex-wrap gap-3 justify-center">
         {recipe.map((reci) => (
           <div key={reci.id} className="w-full md:w-[45%] lg:w-[30%]">

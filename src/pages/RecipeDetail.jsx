@@ -18,11 +18,9 @@ const RecipeDetail = () => {
     }
   };
 
-  const mealItem = recipeData.mealType;
-
   const filterItems = (mealItem) => {
     const filterItem = recipes.filter((item) =>
-      item.mealType.includes(`${mealItem}`)
+      item.mealType.includes(`${mealItem[0]}`)
     );
     setFilterRecipe(filterItem);
     // console.log("MealFil:",filterItem)
@@ -35,7 +33,8 @@ const RecipeDetail = () => {
 
   useEffect(() => {
     if (recipeData) {
-      filterItems(recipeData.mealType);
+      const mealItem = recipeData.mealType;
+      filterItems(mealItem);
     }
   }, [recipeData]);
 
@@ -118,13 +117,11 @@ const RecipeDetail = () => {
           );
         })}
       </div>
-      <div>
-        {
-          filterRecipe.mealType? (<Title title={"Suggestion"} />):''
-        }
-        <div className="page-frame flex flex-wrap gap-3 justify-start">
+      <div className="w-full">
+        <Title title={"Related Product"} />
+        <div className="w-full flex flex-wrap gap-3 justify-start py-4">
           {filterRecipe.map((item) => (
-            <div key={item.id} className="w-full md:w-[45%] lg:w-[30%]">
+            <div key={item.id} className="w-full md:w-[45%] lg:w-[32%]">
               <Recipes
                 id={item.id}
                 image={item.image}

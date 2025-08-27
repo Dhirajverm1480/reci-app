@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="sticky flex justify-between items-center top-0 py-3 px-[3%] backdrop-blur-lg">
+      <header className="sticky top-0 z-50 flex justify-between items-center py-3 px-[3%] backdrop-blur-lg">
         <Link to="/">
           <p className="text-3xl text-orange-500">RecipesClub</p>
         </Link>
