@@ -3,10 +3,10 @@ import Image4 from '../assets/img/image4.png'
 
 const About = () => {
   return (
-    <div className="page-frame h-[calc(100vh-60px)] flex items-center bg-cover bg-no-repeat bg-center bg-fixed"
+    <div className="page-frame h-full md:h-screen flex items-center bg-cover bg-no-repeat bg-center bg-fixed"
       style={{backgroundImage: `url(${Image4})`}}
     >
-      <div className="w-full lg:w-[70%] xl:w-[50%]">
+      <div className="w-full lg:w-[70%] xl:w-[50%] pt-12">
         <Title title={'About'} />
         <p className="py-3 text-md">
           <span className="text-orange-400 text-xl font-bold font-serif mr-2">RecipesClub</span> is a premier web application designed to elevate your cooking experience with a comprehensive and intuitive platform for discovering, organizing, and sharing recipes. Whether you're an aspiring home cook or a seasoned chef, RecipesClub offers a wealth of resources to simplify meal preparation, inspire culinary creativity, and support a variety of dietary needs and preferences.{" "}

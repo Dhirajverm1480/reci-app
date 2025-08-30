@@ -10,7 +10,7 @@ import Image3 from './assets/img/image3.png'
 const App = () => {
   return (
     <div
-      className="text-white bg-black bg-no-repeat bg-cover bg-fixed bg-center"
+      className="w-full h-full text-white bg-black bg-no-repeat bg-cover bg-fixed bg-center"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${Image3})`,
       }}

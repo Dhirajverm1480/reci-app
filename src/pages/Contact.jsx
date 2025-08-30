@@ -5,10 +5,10 @@ import GlobeImg from '../assets/icons/globe.png';
 
 const Contact = () => {
   return (
-    <div className="page-frame lg:h-[calc(100vh-60px)] flex-center">
+    <div className="page-frame xl:h-screen flex-center backdrop-blur-sm">
       {/* <Title title={"Contact"} /> */}
       <div className="w-full lg:flex justify-between items-center md:px-5">
-        <div className="w-full md:h-[50vh] lg:h-full lg:w-[40%] flex flex-col justify-between">
+        <div className="w-full md:h-[50vh] lg:h-full lg:w-[40%] flex flex-col justify-between pt-12">
           <div>
             <Title title={"Contact"} />
           </div>
