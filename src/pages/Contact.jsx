@@ -1,7 +1,7 @@
 import Title from "../components/Title";
 import EmailImg from "../assets/icons/envelope-open.png";
-import PhoneImg from '../assets/icons/phone.png';
-import GlobeImg from '../assets/icons/globe.png';
+import PhoneImg from "../assets/icons/phone.png";
+import GlobeImg from "../assets/icons/globe.png";
 
 const Contact = () => {
   return (
@@ -36,15 +36,23 @@ const Contact = () => {
             </div>
           </div>
           <div className="my-4">
-            <Title title={'Social'} />
+            <Title title={"Social"} />
             <div className="flex flex-wrap py-3">
-              <a href='https://www.linkedin.com/in/dhirajverma-v1' className="social-card">
+              <a
+                href="https://www.linkedin.com/in/dhirajverma-v1"
+                className="social-card"
+                target="_blank"
+              >
                 <span>Linkedin</span>
               </a>
-              <a href='https://github.com/Dhirajverm1480' className="social-card">
+              <a
+                href="https://github.com/Dhirajverm1480"
+                className="social-card"
+                target="_blank"
+              >
                 <span>GitHub</span>
               </a>
-              <a href="#" className="social-card">
+              <a href="#" className="social-card" target="_blank">
                 <span>FaceBook</span>
               </a>
             </div>
