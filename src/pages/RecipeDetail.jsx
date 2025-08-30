@@ -20,7 +20,7 @@ const RecipeDetail = () => {
 
   const filterItems = (mealItem) => {
     const filterItem = recipes.filter((item) =>
-      item.mealType.includes(`${mealItem[0]}`)
+      item.mealType.includes(`${mealItem[0]}`) && item.id !== parseInt(recipeId)
     );
     setFilterRecipe(filterItem);
     // console.log("MealFil:",filterItem)
@@ -44,7 +44,7 @@ const RecipeDetail = () => {
 
   return recipeData ? (
     <div className="page-frame">
-      <div className="w-full md:flex justify-between py-3">
+      <div className="w-full md:flex justify-between pt-16 pb-4">
         <div className="w-full sm:w-[40%]">
           <img
             src={recipeData.image}
@@ -121,7 +121,7 @@ const RecipeDetail = () => {
         <Title title={"Related Product"} />
         <div className="w-full flex flex-wrap gap-3 justify-start py-4">
           {filterRecipe.map((item) => (
-            <div key={item.id} className="w-full md:w-[45%] lg:w-[32%]">
+            <div key={item.id} className="w-full md:w-[45%] lg:w-[32%] xl:w-[24%]">
               <Recipes
                 id={item.id}
                 image={item.image}
